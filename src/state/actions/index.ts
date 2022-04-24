@@ -12,7 +12,6 @@ interface WithdrawAction {
 
 interface BankruptAction {
   type: ActionType.BANKRUPT;
-  payload: number;
 }
 
 export type Action = DepositAction | WithdrawAction | BankruptAction;
