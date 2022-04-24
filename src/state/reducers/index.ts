@@ -1,19 +1,8 @@
-import { ActionType } from "../action-types";
-import { Action } from "../actions";
+import { combineReducers } from "redux";
 
-const initialState = 0;
+import bankReducer from "./bankReducer";
+const reducers = combineReducers({
+  bank: bankReducer,
+});
 
-const reducer = (state: number = initialState, action: Action) => {
-  switch (action.type) {
-    case ActionType.DEPOSIT:
-      return state + action.payload;
-    case ActionType.WITHDRAW:
-      return state - action.payload;
-    case ActionType.BANKRUPT:
-      return 0;
-    default:
-      break;
-  }
-};
-
-export default reducer;
+export default reducers;
